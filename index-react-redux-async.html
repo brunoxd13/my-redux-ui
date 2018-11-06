@@ -171,6 +171,7 @@
           id: generateId()
         }))
       }
+      
       removeItem = (todo) => {
         this.props.store.dispatch(removeTodoAction(todo.id))
         
@@ -180,9 +181,11 @@
             alert('An error occurred. Try again.')
           })
       }
+
       toggleItem = (id) => {
         this.props.store.dispatch(toggleTodoAction(id))
       }
+
       render() {
         return (
           <div>
@@ -215,6 +218,7 @@
           name,
         }))
       }
+
       removeItem = (goal) => {
         this.props.store.dispatch(removeGoalAction(goal.id))
 
@@ -224,6 +228,7 @@
             alert('An error occurred. Try again.')
           })
       }
+
       render() {
         return (
           <div>
@@ -257,6 +262,7 @@
 
         store.subscribe(() => this.forceUpdate())
       }
+
       render() {
         const { store } = this.props
         const { todos, goals, loading } = store.getState()
